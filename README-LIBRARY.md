@@ -21,7 +21,23 @@ bun add @devmentech/libro-reclamaciones
 En tu `app/globals.css` o archivo CSS principal:
 
 ```css
+## 🎨 Estilos
+
+### Opción 1: Import en CSS (Recomendado)
+```css
+/* En tu archivo globals.css o main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import '@devmentech/libro-reclamaciones/dist/styles.css';
+```
+
+### Opción 2: Import directo en el layout
+```tsx
+// En tu layout.tsx o _app.tsx
+import '@devmentech/libro-reclamaciones/dist/styles.css'
+```
 ```
 
 ### 2. Configurar Tailwind CSS

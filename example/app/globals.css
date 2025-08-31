@@ -1,0 +1,6 @@
+/* Import CSS de la librería ANTES de Tailwind para que las variables estén disponibles */
+@import '@devmentech/libro-reclamaciones/dist/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

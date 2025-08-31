@@ -13,7 +13,11 @@
     "dev": "tsup --watch",
     "lint": "eslint src --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "example:dev": "pnpm build && cd example && pnpm dev",
+    "example:build": "pnpm build && cd example && pnpm build",
+    "workspace:install": "pnpm install",
+    "workspace:clean": "rm -rf node_modules example/node_modules && pnpm install"
   },
   "keywords": [
     "libro-reclamaciones",
