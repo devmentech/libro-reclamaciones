@@ -1,14 +1,56 @@
-# Libro de Reclamaciones Virtual para Perú
+# 📚 Libro de Reclamaciones - Librería React/Next.js
 
-Este proyecto proporciona una implementación de un Libro de Reclamaciones Virtual según el formato de Indecopi (DS N 101-2022-PCM) usando Next.js, Bun & Shadcn/ui.  Está diseñado para ser fácilmente adaptable a diferentes organizaciones mediante la configuración de variables de entorno y un endpoint para la lista de productos o servicios.
+[![npm version](https://badge.fury.io/js/@devmentech%2Flibro-reclamaciones.svg)](https://badge.fury.io/js/@devmentech%2Flibro-reclamaciones)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
 
-**Estado:** En desarrollo (Descarga de PDF y envío de emails pendientes de implementar).
+Componente de **Libro de Reclamaciones Virtual** para Perú que cumple con el formato oficial de **INDECOPI** según el DS N° 101-2022-PCM. Ideal para empresas que necesitan implementar un sistema de reclamaciones digital y conforme a la normativa peruana.
 
-## Características
+## ✨ Características
 
-* Interfaz de usuario intuitiva para el registro de reclamaciones.
-* Adaptable a cualquier organización a través de la configuración de productos/servicios.
-* Formato de reclamación según el modelo de [Indecopi](https://cdn.www.gob.pe/uploads/document/file/3510113/Anexo%20I%20DS%20N%20101-2022-PCM_.pdf.pdf).
+- 🇵🇪 **Cumple normativa peruana** - Formato oficial INDECOPI
+- 🎨 **Completamente personalizable** - Estilos y configuración adaptables
+- 📱 **Responsive** - Funciona perfectamente en móviles y desktop
+- ⚡ **Alto rendimiento** - Construido con React 18+ y Next.js 13+
+- 🔒 **Seguro** - Integración opcional con reCAPTCHA
+- 📄 **Generación PDF** - Preparado para exportar reclamaciones
+- 📧 **Sistema de emails** - Hooks para envío automático
+- 🎯 **TypeScript** - Completamente tipado
+- 🛠️ **Fácil integración** - Plug and play en cualquier proyecto Next.js
+
+## 🚀 Instalación Rápida
+
+```bash
+npm install @devmentech/libro-reclamaciones
+```
+
+```tsx
+import { LibroReclamaciones } from '@devmentech/libro-reclamaciones';
+import '@devmentech/libro-reclamaciones/dist/styles.css';
+
+export default function MiPagina() {
+  return (
+    <LibroReclamaciones
+      companyName="Mi Empresa S.A.C."
+      formTitle="Libro de Reclamaciones"
+      formSubtitle="Hoja de Reclamación"
+      products={[
+        { id: "1", name: "Producto 1" },
+        { id: "2", name: "Servicio 1" }
+      ]}
+      currency={{ symbol: "S/", name: "Soles Peruanos" }}
+      responseTime={15}
+      recaptcha={{ enabled: false, siteKey: "" }}
+      onSubmit={(data) => console.log('Reclamo:', data)}
+    />
+  );
+}
+```
+
+Para documentación completa, ver [README-LIBRARY.md](./README-LIBRARY.md) y [INSTALLATION.md](./INSTALLATION.md).
+
+---
+
+**Hecho con ❤️ en Perú por [DevMenTech](https://devmentech.com)**
 * Utiliza Bun como runtime para un rendimiento mejorado.
 * Integración con reCAPTCHA (opcional).
 
